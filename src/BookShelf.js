@@ -15,7 +15,8 @@ class BookShelf extends React.Component {
                 "currentlyReading"
               ).map( book => (
                 <li key={book.id}>
-                  <Book />
+                  <Book
+                   book={book}/>
                 </li>
               ))
             }
@@ -33,7 +34,8 @@ class BookShelf extends React.Component {
               "wantToRead"
             ).map( book => (
               <li key={book.id}>
-                <Book />
+                <Book
+                book={book}/>
               </li>
             ))
           }
@@ -48,13 +50,14 @@ class BookShelf extends React.Component {
               "read"
             ).map( book => (
               <li key={book.id}>
-                <Book />
+              <Book
+              book={book}/>
               </li>
             ))
           }
           </ol>
         </div>
-        
+
       </div>
       )
     }
