@@ -1,5 +1,5 @@
 import React from 'react'
-// import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI'
 import BookShelf from './BookShelf'
 import SearchBar from './SearchBar'
 import MainPage from './MainPage'
@@ -8,8 +8,14 @@ import './App.css'
 
 class BooksApp extends React.Component {
   state = {
-    showSearchPage: false
+    books : []
   }
+
+  ComponentDidMount () {
+    BooksAPI.getAll().then((books)=>{
+      this.setState({books})
+    })
+}
 
   render() {
     return (

@@ -15,7 +15,17 @@ class BookShelf extends React.Component {
           </ol>
         </div>
 
+
         <h2 className="bookshelf-title">Want to Read</h2>
+        <div className="bookshelf-books">
+          <ol className="books-grid">
+          <li>
+              <Book />
+          </li>
+          </ol>
+        </div>
+
+        <h2 className="bookshelf-title">Read</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
           <li>
