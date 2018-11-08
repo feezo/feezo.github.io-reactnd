@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MainPage from './MainPage'
+import Icon from './icons/add.svg'
 
 class Book extends React.Component {
   render(){
@@ -9,7 +9,7 @@ class Book extends React.Component {
           <div className="book-cover" style={{
              width: 128,
              height: 193,
-             backgroundImage:  `${this.props.book.imageLinks ? 'url(this.props.book.imageLinks.thumbnail)' : 'linear-gradient(brown, orange, red)'}`
+             backgroundImage:  `${this.props.book.imageLinks ? 'url(this.props.book.imageLinks.thumbnail)' : 'Icon'}`
             }}></div>
           <div className="book-shelf-changer">
               <select
@@ -20,7 +20,7 @@ class Book extends React.Component {
                 <option value="currentlyReading">Currently Reading</option>
                 <option value="wantToRead">Want to Read</option>
                 <option value="read">Read</option>
-                <option value="none">None</option>
+                <option value="remove">Remove</option>
               </select>
           </div>
         </div>
