@@ -1,8 +1,10 @@
 import React from 'react'
+import * as BooksAPI from './BooksAPI'
 
 class SearchBar extends React.Component {
   state = {
-    query : ''
+    query : '',
+    searchedBooks : []
   }
 
   updateQuery = (query) => {
@@ -10,6 +12,13 @@ class SearchBar extends React.Component {
       query : query
     })
   }
+
+  getSearchedBooks = (query) => {
+    BooksAPI.search(query).then((searchedBooks) =>{
+      this.setState({searchedBooks})
+    })
+  }
+
   render(){
     return(
       <div className="search-books">
