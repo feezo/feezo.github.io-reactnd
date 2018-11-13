@@ -16,7 +16,8 @@ class SearchBar extends React.Component {
   }
 
   updateSearchedBooks = (query) => {
-    query === true ? BooksAPI.search(query).then((searchedBooks) =>{
+    query ? BooksAPI.search(query).then((searchedBooks) =>{
+      searchedBooks.error ? this.setState({searchedBooks:[]}):
       this.setState({searchedBooks})
     }) : this.setState({searchedBooks : []})
   }
