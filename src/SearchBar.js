@@ -17,9 +17,11 @@ class SearchBar extends React.Component {
 
   updateSearchedBooks = (query) => {
     query ? BooksAPI.search(query).then((searchedBooks) =>{
+      {/*fetch searchedbooks using the method defined in BooksAPI */}
       searchedBooks.error ? this.setState({searchedBooks:[]}):
       this.setState({searchedBooks})
-    }) : this.setState({searchedBooks : []})
+    }) :
+    this.setState({searchedBooks : []})
   }
 
 
@@ -32,7 +34,8 @@ class SearchBar extends React.Component {
           <input type="text"
           placeholder="Search by title or author"
           value = {this.state.query}
-          onChange = {(e)=>this.updateQuery(e.target.value)}
+          onChange = {(e) =>
+            this.updateQuery(e.target.value)}
           />
           </div>
        </div>
