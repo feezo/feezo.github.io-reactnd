@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BookShelf from './BookShelf';
+import { Link } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import Book from './Book'
 
@@ -41,7 +42,8 @@ moveShelf = (book, shelf) => {
     </div>
 
     <div className="open-search">
-      <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+      <Link
+      to = "/Search">Add a book</Link>
     </div>
 
   </div>
