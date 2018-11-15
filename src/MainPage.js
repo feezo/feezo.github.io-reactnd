@@ -43,7 +43,7 @@ moveShelf = (book, shelf) => {
 
     <div className="open-search">
       <Link
-      to = "/Search">Add a book</Link>
+      to = "/search">Add a book</Link>
     </div>
 
   </div>
