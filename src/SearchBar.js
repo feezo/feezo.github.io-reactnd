@@ -3,6 +3,7 @@ import * as BooksAPI from './BooksAPI'
 import Book from './Book'
 import BookShelf from './BookShelf';
 import { Link } from 'react-router-dom'
+import MainPage from './MainPage'
 
 class SearchBar extends React.Component {
   state = {

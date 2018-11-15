@@ -13,17 +13,13 @@ class BooksApp extends React.Component {
       <div className="app">
       <Route exact path="/" render={() =>
         < MainPage
-        books={this.state.books}
-        moveShelf = {this.moveShelf}
         />
         }/>
 
-        <Route path="/search" render={() => <div>
+        <Route path="/search" render={() =>
           < SearchBar
-          books={this.state.books}
-          moveShelf = {this.moveShelf}
           />
-          </div>}/>
+          }/>
       </div>
     )
    }
