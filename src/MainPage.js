@@ -7,6 +7,7 @@ import Book from './Book'
 class MainPage extends Component {
   constructor(props) {
    super(props);
+   this.moveShelf = this.moveShelf.bind(this)
    this.state = {books : []};
  }
 

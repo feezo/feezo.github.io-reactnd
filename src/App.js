@@ -10,16 +10,20 @@ class BooksApp extends React.Component {
 
   render() {
     return (
+      this.props.moveShelf,
       <div className="app">
+
       <Route exact path="/" render={() =>
         < MainPage
         />
+      }/>
+
+        <Route path="/search" render={(props) =>
+          < SearchBar
+           {...props} moveShelf={this.moveShelf}/>
         }/>
 
-        <Route path="/search" render={() =>
-          < SearchBar
-          />
-          }/>
+
       </div>
     )
    }
