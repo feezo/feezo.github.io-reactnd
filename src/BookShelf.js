@@ -4,7 +4,6 @@ import Book from './Book'
 
 class BookShelf extends React.Component {
   render () {
-    this.props.books
     return (
       <div className="bookshelf">
 
