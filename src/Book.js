@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import Icon from './icons/add.svg'
-import SearchBar from './SearchBar'
+import React from 'react'
+
 
 
 class Book extends React.Component {

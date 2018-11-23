@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BookShelf from './BookShelf';
 import { Link } from 'react-router-dom'
+
 // import * as BooksAPI from './BooksAPI'
 // import Book from './Book'
 
@@ -19,7 +20,7 @@ class MainPage extends Component {
     <div className="list-books-content">
       <BookShelf
       books={this.props.books}
-      moveShelf={this.moveShelf}
+      moveShelf={this.props.moveShelf}
       />
     </div>
 

@@ -18,7 +18,7 @@ class SearchBar extends React.Component {
           placeholder="Search by title or author"
           value = {this.props.query}
           onChange = {(e) =>
-            this.updateQuery(e.target.value)}
+            this.props.updateQuery(e.target.value)}
           />
           </div>
        </div>
@@ -30,6 +30,8 @@ class SearchBar extends React.Component {
                <Book
                 book  = {searchedBook}
                 moveShelf={this.props.moveShelf}
+                updateQuery={this.props.updateQuery}
+                updateSearchedBooks={this.props.updateSearchedBooks}
                />
               </li>
 

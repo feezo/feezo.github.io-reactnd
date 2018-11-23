@@ -9,7 +9,7 @@ import * as BooksAPI from './BooksAPI'
 class BooksApp extends React.Component {
   constructor(props) {
    super(props);
-   this.moveShelf =   this.moveShelf.bind(this);
+   this.moveShelf = this.moveShelf.bind(this);
    this.state = {
      books : [] ,
      query : '',
@@ -47,6 +47,9 @@ updateSearchedBooks = (query) => {
   }
 
 
+
+
+
   render() {
     return (
       <div className="app">
@@ -61,6 +64,9 @@ updateSearchedBooks = (query) => {
         <Route path="/search" render={() =>
           < SearchBar
           searchedBooks = {this.state.searchedBooks}
+          moveShelf = {this.moveShelf}
+          updateQuery={this.updateQuery}
+          updateSearchedBooks={this.updateSearchedBooks}
           />
         }/>
 
