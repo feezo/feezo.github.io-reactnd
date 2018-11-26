@@ -1,6 +1,6 @@
 import React from 'react'
 import Book from './Book'
-import PropTypes from 'prop-types';
+
 
 class BookShelf extends React.Component {
   render () {
@@ -62,7 +62,5 @@ class BookShelf extends React.Component {
           )
         }
       }
-  Book.propTypes = {
-        moveShelf:PropTypes.func,
-      }
+
   export default BookShelf
