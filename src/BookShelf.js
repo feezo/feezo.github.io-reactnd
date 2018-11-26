@@ -17,7 +17,8 @@ class BookShelf extends React.Component {
                 <li key={book.id}>
                   <Book
                    book={book}
-                   moveShelf={this.props.moveShelf}/>
+                   moveShelf={this.props.moveShelf}
+                   currentShelf="currentlyReading"/>
                 </li>
               ))
             }
@@ -34,7 +35,8 @@ class BookShelf extends React.Component {
                 <li key={book.id}>
                 <Book
                 book={book}
-                moveShelf={this.props.moveShelf}/>
+                moveShelf={this.props.moveShelf}
+                currentShelf="wantToRead"/>
                 </li>
               ))
             }
@@ -51,7 +53,8 @@ class BookShelf extends React.Component {
                   <li key={book.id}>
                   <Book
                   book={book}
-                  moveShelf={this.props.moveShelf}/>
+                  moveShelf={this.props.moveShelf}
+                  currentShelf="read"/>
                   </li>
                 ))
               }
@@ -62,7 +65,5 @@ class BookShelf extends React.Component {
           )
         }
       }
-  Book.propTypes = {
-        moveShelf:PropTypes.func,
-      }
+
   export default BookShelf

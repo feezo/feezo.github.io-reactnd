@@ -58,15 +58,17 @@ updateSearchedBooks = (query) => {
         < MainPage
           books = {this.state.books} //calling all my books
           moveShelf = {this.moveShelf}
+
         />
       }/>
 
         <Route path="/search" render={() =>
           < SearchBar
           searchedBooks = {this.state.searchedBooks}
+          books={this.state.books}
           moveShelf = {this.moveShelf}
           updateQuery={this.updateQuery}
-          updateSearchedBooks={this.updateSearchedBooks}
+          // updateSearchedBooks={this.updateSearchedBooks}
           />
         }/>
 
