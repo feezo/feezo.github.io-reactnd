@@ -68,7 +68,7 @@ updateSearchedBooks = (query) => {
           books={this.state.books}
           moveShelf = {this.moveShelf}
           updateQuery={this.updateQuery}
-          // updateSearchedBooks={this.updateSearchedBooks}
+          updateSearchedBooks={this.updateSearchedBooks}
           />
         }/>
 
