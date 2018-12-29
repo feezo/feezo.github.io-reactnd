@@ -21,6 +21,7 @@ class MainPage extends Component {
       <BookShelf
       books={this.props.books}
       moveShelf={this.props.moveShelf}
+      currentShelf={this.props.currentShelf}
       />
     </div>
 

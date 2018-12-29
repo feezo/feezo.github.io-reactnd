@@ -25,24 +25,33 @@ class SearchBar extends React.Component {
 
       <div className="search-books-results">
           <ol className="books-grid">{
-            this.props.searchedBooks.map(searchedBook =>
-              <li key={searchedBook.id}>
-               <Book
-                book  = {searchedBook}
-                moveShelf={this.props.moveShelf}
-                updateQuery={this.props.updateQuery}
-                updateSearchedBooks={this.props.updateSearchedBooks}
-               />
-              </li>
 
-            )
+            this.props.searchedBooks.map(searchedBook => {
+              let shelf = "none";
+              this.props.books.map(book => (
+                book.id === searchedBook.id ?
+                shelf = this.props.books.shelf : ""
+              ));
+
+              return (
+                <li key={searchedBook.id}>
+                 <Book
+                 book  = {searchedBook}
+                 moveShelf={this.props.moveShelf}
+                 updateQuery={this.props.updateQuery}
+                 updateSearchedBooks={this.props.updateSearchedBooks}
+                 currentShelf={shelf}
+                />
+                </li>
+              )
+            })
           }
           </ol>
-
-          </div>
-     </div>
+        </div>
+      </div>
         )
       }
     }
+
 
 export default SearchBar
