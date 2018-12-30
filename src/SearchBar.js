@@ -27,9 +27,9 @@ class SearchBar extends React.Component {
           <ol className="books-grid">{
 
             this.props.searchedBooks.map(searchedBook => {
-               let shelf ;
+             let shelf ;
               this.props.books.find(book => (
-                shelf =  book.id === searchedBook.id ?
+              shelf = book.id === searchedBook.id ?
                this.props.books.shelf : "none"
               ));
 
