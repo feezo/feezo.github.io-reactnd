@@ -1,17 +1,9 @@
-import React, { Component } from 'react';
-import BookShelf from './BookShelf';
+import React from 'react'
 import { Link } from 'react-router-dom'
+import BookShelf from './BookShelf';
 
-// import * as BooksAPI from './BooksAPI'
-// import Book from './Book'
-
-class MainPage extends Component {
-
-
-  render(){
-    // test to see prop was received
-    //console.log(this.state.books);
-    return(
+const MainPage = (props) => {
+return(
   <div className="list-books">
     <div className="list-books-title">
       <h1>MyReads</h1>
@@ -19,9 +11,9 @@ class MainPage extends Component {
 
     <div className="list-books-content">
       <BookShelf
-      books={this.props.books}
-      moveShelf={this.props.moveShelf}
-      currentShelf={this.props.currentShelf}
+      books={props.books}
+      moveShelf={props.moveShelf}
+      currentShelf={props.currentShelf}
       />
     </div>
 
@@ -32,7 +24,7 @@ class MainPage extends Component {
 
   </div>
     )
-  }
-}
+   }
+
 
 export default MainPage

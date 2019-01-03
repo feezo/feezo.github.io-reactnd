@@ -1,13 +1,8 @@
 import React from 'react'
-import Book from './Book'
 import { Link } from 'react-router-dom'
+import Book from './Book'
 
-
-
-class SearchBar extends React.Component {
-
-
-  render(){
+const SearchBar = (props)  => {
     return(
       <div className="search-books">
         <div className="search-books-bar">
@@ -16,42 +11,34 @@ class SearchBar extends React.Component {
           <div className="search-books-input-wrapper">
           <input type="text"
           placeholder="Search by title or author"
-          value = {this.props.query}
+          value = {props.query}
           onChange = {(e) =>
-            this.props.updateQuery(e.target.value)}
+            props.updateQuery(e.target.value)}
           />
           </div>
        </div>
 
       <div className="search-books-results">
           <ol className="books-grid">{
-
-            this.props.searchedBooks.map(searchedBook => {
-             let shelf ;
-              this.props.books.find(book => (
-              shelf = book.id === searchedBook.id ?
-               this.props.books.shelf : "none"
-              ));
-
+            props.searchedBooks.map(searchedBook => {
               return (
                 <li key={searchedBook.id}>
-                 <Book
-                 book  = {searchedBook}
-                 moveShelf={this.props.moveShelf}
-                 updateQuery={this.props.updateQuery}
-                 updateSearchedBooks={this.props.updateSearchedBooks}
-                 currentShelf={shelf}
+                <Book
+                book  = {searchedBook}
+                moveShelf={props.moveShelf}
+                updateQuery={props.updateQuery}
+                updateSearchedBooks={props.updateSearchedBooks}
+                currentShelf={searchedBook.shelf}
                 />
                 </li>
               )
             })
           }
           </ol>
-        </div>
-      </div>
+          </div>
+          </div>
         )
       }
-    }
 
 
 export default SearchBar

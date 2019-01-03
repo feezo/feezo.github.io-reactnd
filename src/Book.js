@@ -1,20 +1,20 @@
 import React from 'react'
 
-
-
-class Book extends React.Component {
-  render(){
+const Book = (props) => {
     return(
       <div className="book">
         <div className="book-top">
-          <div className="book-cover" style={{
+          <div className="book-cover"
+           style={{
              width: 128,
              height: 193,
-             backgroundImage:  `${this.props.book.imageLinks ? 'url(this.props.book.imageLinks.thumbnail)' : 'Icon'}`}}></div>
+             backgroundImage:  `${props.book.imageLinks ? 'url(props.book.imageLinks.thumbnail)' : 'Icon'}`
+            }}>
+          </div>
           <div className="book-shelf-changer">
               <select
-                onChange={(event)=>this.props.moveShelf(this.props.book, event.target.value)}
-                value={this.props.currentShelf}
+                onChange={(event)=> props.moveShelf(props.book, event.target.value)}
+                value={props.currentShelf}
               >
                 <option value="move" disabled>Move to...</option>
                 <option value="currentlyReading">Currently Reading</option>
@@ -24,11 +24,10 @@ class Book extends React.Component {
               </select>
           </div>
         </div>
-          <div className="book-title">{this.props.book.title}</div>
-            <div className="book-authors">{this.props.book.authors}</div>
+          <div className="book-title">{props.book.title}</div>
+            <div className="book-authors">{props.book.authors}</div>
           </div>
           )
         }
-      }
 
-      export default Book
+export default Book
